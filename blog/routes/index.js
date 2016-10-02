@@ -198,6 +198,7 @@ app.get('/u/:name', function (req, res) {
       req.flash('error', err); 
       return res.redirect('/');
     }
+    
     res.render('article', {
       title: req.params.title,
       post: post,
@@ -274,6 +275,7 @@ app.get('/edit/:name/:day/:title', function (req, res) {
     res.redirect('back');
   });
 });
+
 
   function checkLogin(req, res, next) {
     if (!req.session.user) {
